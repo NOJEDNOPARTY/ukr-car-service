@@ -1,0 +1,110 @@
+.form-field {
+    display: block;
+    width: 100%;
+    padding: 0 1.25rem;
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 2.625rem;
+    background-color: var(--form-field-bg);
+    color: var(--black);
+    border-radius: .75rem;
+    border: 1px solid var(--form-field-bg);
+
+    &::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: var(--black);
+    }
+
+    &::-moz-placeholder {
+        /* Firefox 19+ */
+        color: var(--black);
+    }
+
+    &:-ms-input-placeholder {
+        /* IE 10+ */
+        color: var(--black);
+    }
+
+    &:-moz-placeholder {
+        /* Firefox 18- */
+        color: var(--black);
+    }
+
+    &:focus {
+        border: 1px solid var(--action);
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 1.25rem;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            border: 1px solid var(--action);
+        }
+    }
+
+    &.form-field-textarea {
+        padding: .75rem 1rem;
+        min-height: 5.5rem;
+        line-height: 1.3;
+        resize: none;
+    }
+}
+
+form {
+    .btn-transparent {
+        margin-top: .75rem;
+        width: 100%;
+        line-height: 2.625;
+    }
+
+    .checkbox-field {
+        cursor: pointer;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        svg {
+            margin-right: .5rem;
+
+            rect {
+                stroke: var(--action);
+            }
+
+            path {
+                opacity: 0;
+                stroke: var(--action);
+            }
+        }
+
+        span {
+            margin: 0;
+            font-size: .75rem;
+            line-height: 1.1rem;
+            font-weight: 500;
+            color: var(--black-lighter);
+            transform: translateY(2px);
+
+            a {
+                color: var(--black-darker);
+                text-decoration: underline;
+
+                @media (hover: hover) {
+                    &:hover {
+                        color: var(--action);
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        input {
+            display: none;
+        }
+
+        input:checked ~ svg path {
+            opacity: 1;
+        }
+    }
+}

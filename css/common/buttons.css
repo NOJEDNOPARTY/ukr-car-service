@@ -1,0 +1,206 @@
+.btn {
+    user-select: none;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1.75rem;
+    font-family: 'Manrope';
+    line-height: 3.625rem;
+    font-weight: 800;
+    font-size: 1rem;
+    background-color: var(--action);
+    border: 1px solid var(--action);
+    border-radius: 6.25rem;
+    outline: none;
+
+    span {
+        position: relative;
+        z-index: 1;
+        letter-spacing: -1px;
+        color: var(--white);
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: var(--orange-12);
+            border: 1px solid var(--orange-12);
+
+            span {
+                color: var(--action);
+            }
+        }
+    }
+
+    &.btn-secondary {
+        background-color: var(--orange-12);
+        border: 1px solid var(--orange-12);
+
+        span {
+            color: var(--action);
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: var(--action);
+                border: 1px solid var(--action);
+
+                span {
+                    color: var(--white);
+                }
+            }
+        }
+    }
+
+    &.btn-transparent {
+        background-color: transparent;
+        border: 1px solid var(--black-darker-20);
+        transition: var(--transition);
+
+        span {
+            color: var(--black-darker);
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: transparent;
+                border: 1px solid var(--action);
+
+                span {
+                    color: var(--action);
+                }
+            }
+        }
+    }
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.25rem;
+        min-width: 2.25rem;
+        height: 2.25rem;
+        border-radius: .5rem;
+        background-color: var(--black-bg-darker-10);
+        border: 1px solid var(--black-bg-darker-10);
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+
+/* !!! change after */
+
+.btn-select {
+    position: relative;
+    display: block;
+    user-select: none;
+}
+
+.btn-select:not(:last-child) {
+    margin-right: 1.25rem;
+}
+
+.btn-select-trigger {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 3.875rem;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1rem;
+    color: var(--btn-select-color);
+}
+
+.btn-select-trigger svg {
+    margin-left: .5rem;
+}
+
+.btn-select-trigger svg path {
+    stroke: var(--btn-select-color);
+}
+
+.btn-select-menu {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    top: calc(100% + .75rem);
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 1rem .25rem 1rem 1rem;
+    background-color: var(--btn-select-menu-bg);
+    box-shadow: var(--btn-select-menu-shadow);
+    border-radius: .75rem;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.btn-select-menu :is(span, a) {
+    display: inline-block;
+    font-weight: 400;
+    font-size: .75rem;
+    line-height: .75rem;
+    color: var(--btn-select-menu-current);
+}
+
+
+.btn-select-menu :is(span, a):not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.btn-select-menu a {
+    color: var(--btn-select-menu-item);
+}
+
+.btn-select.open .btn-select-trigger {
+    color: var(--btn-select-color-hover);
+}
+
+.btn-select svg {
+    width: .75rem;
+    min-width: .75rem;
+    height: .5rem;
+}
+
+.btn-select.open svg path {
+    stroke: var(--btn-select-color-hover);
+}
+
+.btn-select.open .btn-select-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.btn-select.open .btn-select-trigger svg {
+    transform: rotate(-180deg);
+}
+
+
+@media (hover: hover) {
+    .btn-select-menu a:hover {
+        color: var(--btn-select-menu-item-hover);
+    }
+
+    .btn-select-trigger:hover {
+        color: var(--btn-select-color-hover);
+    }
+
+    .btn-select-trigger:hover svg path {
+        stroke: var(--btn-select-color-hover);
+    }
+}

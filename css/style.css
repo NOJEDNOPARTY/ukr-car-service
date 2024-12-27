@@ -1,0 +1,17 @@
+@import "./libs/normilize/normilize.css";
+@import "./fonts.css";
+@import "./variables.css";
+@import "./common/preloader.css";
+@import "./common/header.css";
+@import "./common/typography.css";
+@import "./main.css";
+
+@import "./common/buttons.css";
+@import "./common/forms.css";
+
+@import "./libs/splide/splide.min.css";
+
+@import "./sections/news.css";
+
+@import "./common/footer.css";
+@import "./common/breadcrumbs.css";
