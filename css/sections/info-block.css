@@ -74,6 +74,7 @@
 
             @media (max-width: 992px) {
                 width: min(100%, 20rem);
+                margin: 0 auto;
             }
         }
     }
