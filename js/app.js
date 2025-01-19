@@ -11,7 +11,8 @@ const common = {
 	main: () => {
 		const body = document.body;
 		const header = document.querySelector('.header');
-		const setFixedHeader = () => window.scrollY > 0
+		const headerTopHeight = document.querySelector('.header-top').offsetHeight;
+		const setFixedHeader = () => window.scrollY > headerTopHeight
 			? header.classList.add('fixed')
 			: header.classList.remove('fixed');
 		document.addEventListener('scroll', setFixedHeader);
@@ -26,6 +27,13 @@ const common = {
 				if (!menu.contains(event.target) && !btn.contains(event.target))
 					menu.classList.remove('open');
 			});
+		}));
+
+		const menuTrigger = document.querySelectorAll('.menu-trigger');
+		menuTrigger.forEach(trigger => trigger.addEventListener('click', () => {
+			body.classList.toggle('menu-open');
+			header.classList.toggle('open');
+			trigger.classList.toggle('open');
 		}));
 
 		const accordionTrigger = document.querySelectorAll('.accordion-trigger');
@@ -46,6 +54,16 @@ const common = {
 					container.classList.add('active');
 				}
 			});
+		});
+
+		const scrollNext = document.querySelectorAll('.scroll-next');
+		scrollNext.forEach(trigger => {
+		  trigger.addEventListener('click', () => {
+			const section = trigger.closest('section');
+			const top = section ? (section.getBoundingClientRect().bottom + window.scrollY) : 0;
+
+			window.scrollTo({ top, behavior: 'smooth' });
+		  });
 		});
 	},
 	animation: () => {

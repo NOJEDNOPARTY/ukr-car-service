@@ -1,6 +1,7 @@
 :root {
     --bg-color: #ffffff;
     --white: #ffffff;
+    --lightblue: #DCE3EA;
     --black: #000000;
     --black-lighter: #37373E;
     --black-darker: #151517;
@@ -13,7 +14,10 @@
     --action: var(--orange);
     --form-field-bg: rgba(189, 189, 201, .2);
     --scrollbar-bg-color: #F76300;
-    --footer-bg: #F5F5F7;
+    --lighter-bg: #F5F5F7;
     --separator-line: rgb(177, 178, 181, .4);
     --transition: 0.3s ease;
+    --bg-lightgray: #F7F9FC;
+    --bg-lightblue: #EBEEF2;
+    --bg-grayblue: #8E8E8E;
 }

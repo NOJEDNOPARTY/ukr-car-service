@@ -1,17 +1,18 @@
 .link-elememt {
-    display: flex;
+    display: inline-flex;
     align-items: flex-start;
     justify-content: flex-start;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.1;
+    gap: .5rem;
     color: var(--black-lighter);
 
     .link-elememt-icon {
         display: block;
         width: 1.25rem;
         min-width: 1.25rem;
-        margin-right: .5rem;
+        transform: translateY(-1px);
 
         img {
             max-width: 100%;
@@ -73,7 +74,7 @@ p {
 
 h1 {
     --font-size: 3.75rem;
-    --letter-spacing: -1px;
+    --letter-spacing: -1.15px;
     --margin-bottom: .5rem;
 
     @media (max-width: 768px) {

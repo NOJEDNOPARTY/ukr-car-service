@@ -23,12 +23,8 @@
 
     @media (hover: hover) {
         &:hover {
-            background-color: var(--orange-12);
-            border: 1px solid var(--orange-12);
-
-            span {
-                color: var(--action);
-            }
+            border: 1px solid var(--white);
+            box-shadow: 0 0 0 1.5px var(--orange);
         }
     }
 
@@ -42,12 +38,8 @@
 
         @media (hover: hover) {
             &:hover {
-                background-color: var(--action);
                 border: 1px solid var(--action);
-
-                span {
-                    color: var(--white);
-                }
+                box-shadow: none;
             }
         }
     }
@@ -65,6 +57,7 @@
             &:hover {
                 background-color: transparent;
                 border: 1px solid var(--action);
+                box-shadow: none;
 
                 span {
                     color: var(--action);
@@ -100,16 +93,10 @@
 }
 
 
-/* !!! change after */
-
 .btn-select {
     position: relative;
     display: block;
     user-select: none;
-}
-
-.btn-select:not(:last-child) {
-    margin-right: 1.25rem;
 }
 
 .btn-select-trigger {
@@ -117,19 +104,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 3.875rem;
-    font-weight: 600;
-    font-size: 1rem;
+    min-width: 3.25rem;
+    font-weight: 800;
+    font-size: .875rem;
     line-height: 1rem;
-    color: var(--btn-select-color);
+    color: var(--black-darker);
 }
 
 .btn-select-trigger svg {
-    margin-left: .5rem;
+    margin-left: .75rem;
 }
 
 .btn-select-trigger svg path {
-    stroke: var(--btn-select-color);
+    stroke: var(--black-darker);
 }
 
 .btn-select-menu {
@@ -143,8 +130,8 @@
     right: 0;
     width: 100%;
     padding: 1rem .25rem 1rem 1rem;
-    background-color: var(--btn-select-menu-bg);
-    box-shadow: var(--btn-select-menu-shadow);
+    background-color: var(--bg-lightgray);
+    box-shadow: 0px 21px 8px rgba(133, 147, 147, 0.01), 0px -10px 7px rgba(133, 147, 147, 0.05), 0px 5px 5px rgba(133, 147, 147, 0.09), 0px 1px 3px rgba(133, 147, 147, 0.1);
     border-radius: .75rem;
     opacity: 0;
     visibility: hidden;
@@ -152,10 +139,11 @@
 
 .btn-select-menu :is(span, a) {
     display: inline-block;
-    font-weight: 400;
+    font-weight: 800;
     font-size: .75rem;
-    line-height: .75rem;
-    color: var(--btn-select-menu-current);
+    line-height: 1rem;
+    opacity: .5;
+    color: var(--black-darker);
 }
 
 
@@ -164,21 +152,21 @@
 }
 
 .btn-select-menu a {
-    color: var(--btn-select-menu-item);
+    opacity: 1;
 }
 
 .btn-select.open .btn-select-trigger {
-    color: var(--btn-select-color-hover);
+    color: var(--orange);
 }
 
 .btn-select svg {
-    width: .75rem;
-    min-width: .75rem;
-    height: .5rem;
+    width: 1rem;
+    min-width: 1rem;
+    height: 1rem;
 }
 
 .btn-select.open svg path {
-    stroke: var(--btn-select-color-hover);
+    stroke: var(--orange);
 }
 
 .btn-select.open .btn-select-menu {
@@ -192,15 +180,8 @@
 
 
 @media (hover: hover) {
-    .btn-select-menu a:hover {
-        color: var(--btn-select-menu-item-hover);
-    }
-
-    .btn-select-trigger:hover {
-        color: var(--btn-select-color-hover);
-    }
-
-    .btn-select-trigger:hover svg path {
-        stroke: var(--btn-select-color-hover);
+    :is(.btn-select-menu a:hover, .btn-select-trigger:hover, .btn-select-trigger:hover svg path) {
+        color: var(--orange);
+        stroke: var(--orange);
     }
 }

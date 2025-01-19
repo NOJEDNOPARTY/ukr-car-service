@@ -1,6 +1,6 @@
 .footer {
     padding: 4rem 0;
-    background-color: var(--footer-bg);
+    background-color: var(--lighter-bg);
     background-image: url('../../images/footer-bg.png');
     background-repeat: no-repeat;
     background-position: bottom right;
