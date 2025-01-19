@@ -92,9 +92,9 @@
                             top: 11%;
                             bottom: 3%;
                             height: 86%;
-                            width: calc(100% + .8rem);
-                            left: -.4rem;
-                            right: -.4rem;
+                            width: calc(100% + .4rem);
+                            left: -.2rem;
+                            right: -.2rem;
                         }
                     }
                 }
