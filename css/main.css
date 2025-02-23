@@ -72,6 +72,11 @@ body::-webkit-scrollbar-thumb {
 
 main  {
     flex: 1 0 auto;
+    padding-bottom: 9.75rem;
+
+    @media (max-width: 768px)  {
+        padding-bottom: 4rem;
+    }
 }
 
 footer {

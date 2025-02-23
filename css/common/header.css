@@ -6,6 +6,8 @@
     --h-bottom-height-desktop: 4.75rem;
     --h-bottom-height-tablet: 4.375rem;
     --h-bottom-height-mobile: 3.5rem;
+    --hero-header-1: rgba(20, 20, 23, .2);
+    --hero-header-2: rgba(20, 20, 23, .3);
 
     position: fixed;
     z-index: 10;
@@ -80,7 +82,7 @@
             gap: 1rem;
         }
 
-        .link-elememt {
+        .link-element {
             margin-bottom: 0;
             font-size: .875rem;
             font-weight: 800;
@@ -200,7 +202,7 @@
                 display: none;
             }
 
-            .link-elememt {
+            .link-element {
                 align-items: center;
                 justify-content: center;
                 width: 1.5rem;
@@ -311,7 +313,7 @@
                     line-height: 2.625rem;
                 }
 
-                .link-elememt {
+                .link-element {
                     justify-content: center;
                     margin: 2.5rem 0 2rem;
                     font-weight: 800;
@@ -333,6 +335,61 @@
         @media (max-width: 1100px) {
             opacity: 1;
             visibility: visible;
+        }
+    }
+}
+
+body:has(.hero:first-child) .header:not(.fixed) {
+    :is(.link-element, .btn-select-trigger) {
+        color: var(--white);
+
+        @media (hover: hover) {
+            &:not(p):hover {
+                color: var(--orange);
+
+                svg path {
+                    stroke: var(--orange);
+                }
+            }
+        }
+    }
+
+    .btn-select-trigger svg path {
+        stroke: var(--white);
+    }
+
+    .header-top {
+        background-color: var(--hero-header-2);
+    }
+
+    .header-bottom {
+        background-color: var(--hero-header-1);
+        border-color: transparent;
+
+        nav ul a {
+            color: var(--white);
+        }
+
+        .menu-trigger svg path {
+            stroke: var(--white);
+        }
+    }
+
+    .btn-transparent {
+        border-color: var(--white);
+
+        span {
+            color: var(--white);
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                border-color: var(--action);
+
+                span {
+                    color: var(--action);
+                }
+            }
         }
     }
 }

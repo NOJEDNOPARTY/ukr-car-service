@@ -36,25 +36,22 @@ const common = {
 			trigger.classList.toggle('open');
 		}));
 
-		const accordionTrigger = document.querySelectorAll('.accordion-trigger');
-		accordionTrigger.forEach(trigger => {
-			trigger.addEventListener('click', () => {
-				const container = trigger.closest('.accordion-container');
-				const content = container.querySelector('.accordion-content');
-				const isActive = container.classList.contains('active');
+		const questions = document.querySelectorAll('.faq-question');
+		questions.forEach(q => q.addEventListener('click', () => {
+			const item = q.closest('.faq-item');
+			const answer = item.querySelector('.faq-answer');
+			const isActive = item.classList.contains('active');
 
-				document.querySelectorAll('.accordion-container.active').forEach(activeContainer => {
-					const activeContent = activeContainer.querySelector('.accordion-content');
-					activeContent.style.maxHeight = null;
-					activeContainer.classList.remove('active');
-				});
-
-				if (!isActive) {
-					content.style.maxHeight = content.scrollHeight + "px";
-					container.classList.add('active');
-				}
+			document.querySelectorAll('.faq-item').forEach(i => {
+				i.classList.remove('active');
+				i.querySelector('.faq-answer').style.maxHeight = null;
 			});
-		});
+
+			if (!isActive) {
+				item.classList.add('active');
+				answer.style.maxHeight = answer.scrollHeight + "px";
+			}
+		}));
 
 		const scrollNext = document.querySelectorAll('.scroll-next');
 		scrollNext.forEach(trigger => {

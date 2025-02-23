@@ -229,3 +229,8 @@
 .article-similar:not(:last-child) {
     margin-bottom: 3.75rem;
 }
+
+.news h2 + p {
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
+}

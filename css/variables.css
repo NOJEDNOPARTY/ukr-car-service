@@ -9,6 +9,7 @@
     --black-darker-20: rgba(21, 21, 23, .2);
     --orange: #F76300;
     --orange-12: rgba(247, 99, 0, .12);
+    --orange-25: rgba(247, 99, 0, .25);
     --gray: #727274;
     --gray-darker: #8E8D96;
     --action: var(--orange);

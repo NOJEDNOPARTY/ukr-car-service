@@ -1,4 +1,4 @@
-.link-elememt {
+.link-element {
     display: inline-flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -13,7 +13,7 @@
     }
 
 
-    .link-elememt-icon {
+    .link-element-icon {
         display: block;
         width: 1.25rem;
         min-width: 1.25rem;

@@ -2,6 +2,7 @@
 @import "./fonts.css";
 @import "./variables.css";
 @import "./common/preloader.css";
+@import "./libs/fancy/jquery.fancybox.min.css";
 @import "./common/header.css";
 @import "./common/typography.css";
 @import "./main.css";
@@ -10,9 +11,13 @@
 @import "./common/forms.css";
 
 @import "./sections/banner.css";
+@import "./sections/hero.css";
 @import "./sections/about.css";
 @import "./sections/products.css";
 @import "./sections/info-block.css";
+@import "./sections/reviews.css";
+@import "./sections/benefits.css";
+@import "./sections/faq.css";
 @import "./sections/news.css";
 
 @import "./libs/splide/splide.min.css";
