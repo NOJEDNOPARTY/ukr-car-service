@@ -36,30 +36,36 @@ const common = {
 			trigger.classList.toggle('open');
 		}));
 
-		const questions = document.querySelectorAll('.faq-question');
-		questions.forEach(q => q.addEventListener('click', () => {
-			const item = q.closest('.faq-item');
-			const answer = item.querySelector('.faq-answer');
-			const isActive = item.classList.contains('active');
+		const accordionTrigger = document.querySelectorAll('.accordion-trigger');
+		accordionTrigger.forEach(trigger => {
+			trigger.addEventListener('click', () => {
+				const container = trigger.closest('.accordion-container');
+				const content = container.querySelector('.accordion-content');
+				const isActive = container.classList.contains('active');
 
-			document.querySelectorAll('.faq-item').forEach(i => {
-				i.classList.remove('active');
-				i.querySelector('.faq-answer').style.maxHeight = null;
+				document.querySelectorAll('.accordion-container.active').forEach(activeContainer => {
+					const activeContent = activeContainer.querySelector('.accordion-content');
+					activeContent.style.maxHeight = null;
+					activeContainer.classList.remove('active');
+				});
+
+				if (!isActive) {
+					content.style.maxHeight = content.scrollHeight + "px";
+					container.classList.add('active');
+				}
 			});
-
-			if (!isActive) {
-				item.classList.add('active');
-				answer.style.maxHeight = answer.scrollHeight + "px";
-			}
-		}));
+		});
 
 		const scrollNext = document.querySelectorAll('.scroll-next');
 		scrollNext.forEach(trigger => {
 		  trigger.addEventListener('click', () => {
-			const section = trigger.closest('section');
-			const top = section ? (section.getBoundingClientRect().bottom + window.scrollY) : 0;
+			const currentSection = trigger.closest('section');
+			if (currentSection && currentSection.nextElementSibling) {
+			  const nextSection = currentSection.nextElementSibling;
+			  const top = (nextSection.getBoundingClientRect().top + window.scrollY) - 100;
 
-			window.scrollTo({ top, behavior: 'smooth' });
+			  window.scrollTo({ top, behavior: 'smooth' });
+			}
 		  });
 		});
 	},
@@ -86,16 +92,18 @@ const common = {
 		initializeAnimation();
 	},
 	slider: () => {
-		// const storyYearsBlock = document.querySelector('.story-years-slider');
-		// const storySlider = storyYearsBlock && new Splide(storyYearsBlock, {
-		// 	direction: 'ttb',
-		// 	pagination: false,
-		// 	arrows: false,
-		// 	autoHeight: true,
-		// 	heightRatio: 1,
-		// 	wheel: true,
-		// 	releaseWheel: true,
-		// }).mount();
+		const reviewsBlock = document.querySelector('.reviews-slider');
+		reviewsBlock && new Splide( '.reviews-slider', {
+			perPage : 3,
+			perMove: 1,
+			pagination: false,
+			arrows: true,
+			gap: 12,
+			breakpoints: {
+				992: { perPage : 2 },
+				650: { perPage : 1 },
+		  	},
+		}).mount();
 	},
 };
 

@@ -16,7 +16,7 @@
     right: 0;
     width: 100%;
     height: var(--h-height-desktop);
-    background: transparent;
+    background-color: transparent;
     transition: none;
 
     @media (max-width: 1100px) {
@@ -29,7 +29,6 @@
 
     &.fixed {
         height: var(--h-bottom-height-desktop);
-        background-color: var(--white);
 
         .header-menu {
             top: var(--h-bottom-height-desktop);
@@ -61,6 +60,10 @@
             overflow: hidden;
             padding: 0;
         }
+
+        :is(.header-top, .header-bottom) {
+            background-color: var(--white);
+        }
     }
 
     .header-top {
@@ -70,6 +73,7 @@
         padding: .125rem 0;
         height: var(--h-top-height-desktop);
         background-color: var(--bg-lightgray);
+        transition: background-color .2s ease, height .2s ease;
 
         @media (max-width: 992px) {
             display: none;
@@ -340,6 +344,8 @@
 }
 
 body:has(.hero:first-child) .header:not(.fixed) {
+    backdrop-filter: blur(10px);
+
     :is(.link-element, .btn-select-trigger) {
         color: var(--white);
 

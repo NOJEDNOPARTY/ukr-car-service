@@ -17,8 +17,10 @@
     --scrollbar-bg-color: #F76300;
     --lighter-bg: #F5F5F7;
     --separator-line: rgb(177, 178, 181, .4);
-    --transition: 0.3s ease;
+    --transition: .3s ease;
     --bg-lightgray: #F7F9FC;
     --bg-lightblue: #EBEEF2;
     --bg-grayblue: #8E8E8E;
+    --light-purple: #E1DFF1;
+    --light-purple-l: #D4D2E3;
 }
