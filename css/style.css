@@ -13,12 +13,14 @@
 @import "./sections/banner.css";
 @import "./sections/hero.css";
 @import "./sections/about.css";
+@import "./sections/contacts.css";
 @import "./sections/products.css";
 @import "./sections/info-block.css";
+@import "./sections/team.css";
 @import "./sections/reviews.css";
 @import "./sections/benefits.css";
 @import "./sections/faq.css";
-@import "./sections/price.css";
+@import "./sections/plans.css";
 @import "./sections/news.css";
 
 @import "./libs/splide/splide.min.css";

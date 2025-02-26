@@ -50,6 +50,17 @@
         }
     }
 
+    h1 {
+        --font-size: 3.25rem;
+        --letter-spacing: -1.15px;
+        --margin-bottom: .5rem;
+
+        @media (max-width: 768px) {
+            --font-size: 1.875rem;
+        }
+    }
+
+
     .breadcrumbs {
         justify-content: center;
     }

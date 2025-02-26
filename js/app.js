@@ -104,6 +104,19 @@ const common = {
 				650: { perPage : 1 },
 		  	},
 		}).mount();
+		const teamBlock = document.querySelector('.team-slider');
+		teamBlock && new Splide( '.team-slider', {
+			perPage : 4,
+			perMove: 1,
+			pagination: false,
+			arrows: true,
+			gap: 12,
+			breakpoints: {
+				992: { perPage : 3 },
+				710: { perPage : 2 },
+				480: { perPage : 1 },
+		  	},
+		}).mount();
 	},
 };
 

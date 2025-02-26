@@ -173,6 +173,34 @@
             }
         }
     }
+
+    &.hero-error {
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            color: var(--white);
+
+            p {
+                margin-bottom: 1rem;
+                font-size: 1rem;
+
+                &:first-child {
+                    margin-bottom: -2rem;
+                    font-size: .75rem;
+                    opacity: .5;
+                }
+            }
+
+            h1 {
+                font-size: 7.5rem;
+                line-height: 1;
+                margin-bottom: -2rem;
+            }
+        }
+    }
 }
 
 .hero-button-wrapper {
@@ -239,6 +267,65 @@
     }
 }
 
+.hero-simple {
+    &:not(:last-child) {
+        margin-bottom: 10rem;
+
+        @media (max-width: 1100px) {
+            margin-bottom: 6.25rem;
+        }
+
+        @media (max-width: 992px) {
+            margin-bottom: 4.375rem;
+        }
+    }
+
+    .hero-simple-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10rem 2rem;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-radius: 2.75rem;
+
+        @media (max-width: 992px) {
+            padding: 4rem 1rem;
+        }
+
+        .heading {
+            width: min(100%, 43rem);
+            color: var(--white);
+
+            h1 {
+                margin: 1.125rem 0;
+
+                @media (min-width: 1100px) {
+                    font-size: 3.75rem;
+                }
+            }
+
+            .breadcrumbs {
+                a {
+                    color: var(--white);
+
+                    @media (hover: hover) {
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                span {
+                    color: var(--white);
+                }
+            }
+        }
+    }
+}
+
 @keyframes rotate360 {
     from {
       transform: translate(-50%, -50%) rotate(0deg);
@@ -246,4 +333,4 @@
     to {
       transform: translate(-50%, -50%) rotate(360deg);
     }
-  }
+}

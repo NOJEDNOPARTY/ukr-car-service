@@ -1,0 +1,212 @@
+.plans {
+    &:not(:last-child) {
+        padding-bottom: 8rem;
+
+        @media (max-width: 1100px) {
+            padding-bottom: 6.25rem;
+        }
+
+        @media (max-width: 992px) {
+            padding-bottom: 4.375rem;
+        }
+    }
+
+    .plans-list {
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row wrap;
+    }
+
+    .plans-item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: calc(50% - .375rem);
+        margin-bottom: .75rem;
+        padding: 1.25rem 2rem 2rem;
+        border: 1px solid var(--light-purple);
+        border-radius: 1.5rem;
+        overflow: hidden;
+
+        @media (max-width: 992px) {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(80.13% 150.14% at 50% 49.62%, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, linear-gradient(0deg, #F76300, #F76300), #FFFFFF;
+            background-blend-mode: overlay, normal, normal;
+            opacity: 0;
+        }
+
+        > * {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+
+        &:nth-child(-n+3) {
+            width: calc((100% / 3) - .5rem);
+
+            @media (max-width: 1200px) {
+                width: calc(50% - .375rem);
+            }
+
+            @media (max-width: 992px) {
+                width: 100%;
+            }
+        }
+
+        :is(h3, h4, h5, p, li) {
+            line-height: 1.5;
+        }
+
+        :is(h4, h4 span, li, p) {
+            margin-bottom: 0;
+            font-size: .875rem;
+            font-weight: 400;
+        }
+
+        :is(h4, h5, strong) {
+            font-weight: 700;
+        }
+
+        .plans-item-top {
+            min-height: 11.5rem;
+            max-height: 11.5rem;
+            border-bottom: 1px solid var(--simple-gray-4);
+
+            @media (max-width: 992px) {
+                min-height: 0;
+                max-height: initial;
+                padding-bottom: 1rem;
+            }
+
+            h3 {
+                margin-bottom: .75rem;
+                font-size: 1.5rem;
+                font-weight: 400;
+
+                @media (max-width: 992px) {
+                    font-size: 1.25rem;
+                }
+            }
+
+            h4 {
+                margin-bottom: 1.25rem;
+                font-size: 2rem;
+
+                @media (max-width: 992px) {
+                    font-size: 1.5rem;
+                }
+
+                span {
+                    display: block;
+                    margin-top: -.25rem;
+                    color: var(--black-darker);
+                }
+            }
+        }
+
+        .plans-item-list {
+            list-style: none;
+            margin: 0;
+            padding: 1.75rem 0;
+            height: 100%;
+
+            @media (max-width: 992px) {
+                height: auto;
+            }
+
+            li {
+                position: relative;
+                padding-left: 1.5rem;
+
+                &:not(:last-child) {
+                    margin-bottom: .7rem;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 3px;
+                    left: 0;
+                    display: block;
+                    width: 1rem;
+                    min-width: 1rem;
+                    height: 1rem;
+                    background-image: url('../../images/check-black.svg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                }
+            }
+        }
+
+        .plans-item-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: .5rem;
+
+            @media (max-width: 500px) {
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                text-align: center;
+                gap: 1.5rem;
+            }
+
+            h5 {
+                font-size: 1rem;
+            }
+
+            .btn {
+                width: min(100%, 10rem);
+            }
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                :is(h3, h4, h5, p, li, span, strong, h4 span) {
+                    color: var(--white);
+                }
+
+                &::before {
+                    opacity: 1;
+                }
+
+                .plans-item-list li::before {
+                    background-image: url('../../images/check-light.svg');
+                }
+
+                .plans-item-bottom .btn {
+                    background-color: var(--white);
+                    border: 1px solid var(--white);
+
+                    span {
+                        color: var(--black-darker);
+                    }
+
+                    @media (hover: hover) {
+                        &:hover span {
+                            color: var(--orange);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

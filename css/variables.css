@@ -12,6 +12,7 @@
     --orange-25: rgba(247, 99, 0, .25);
     --gray: #727274;
     --gray-darker: #8E8D96;
+    --gray-darker-40: rgba(177, 178, 181, .4);
     --action: var(--orange);
     --form-field-bg: rgba(189, 189, 201, .2);
     --scrollbar-bg-color: #F76300;
@@ -23,4 +24,5 @@
     --bg-grayblue: #8E8E8E;
     --light-purple: #E1DFF1;
     --light-purple-l: #D4D2E3;
+    --simple-gray-4: rgba(177, 178, 181, 4);
 }
