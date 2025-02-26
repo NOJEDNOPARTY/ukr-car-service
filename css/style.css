@@ -18,6 +18,7 @@
 @import "./sections/reviews.css";
 @import "./sections/benefits.css";
 @import "./sections/faq.css";
+@import "./sections/price.css";
 @import "./sections/news.css";
 
 @import "./libs/splide/splide.min.css";
