@@ -75,16 +75,16 @@ const common = {
 			wowEffects.forEach(trigger => {
 				const { wowFadeIn } = trigger.dataset;
 				const start = 'top 100%';
-				const y = wowFadeIn ? 0 : 50;
+				const y = wowFadeIn ? 0 : 40;
 
 				gsap.set(trigger, { opacity: 0, y });
 				gsap.to(trigger, {
 					opacity: 1,
 					y: 0,
-					duration: .4,
+					duration: .15,
 					delay: 0,
 					scrollTrigger: { trigger, start },
-					ease: "power2.out"
+					ease: "ease"
 				});
 			});
 		};
