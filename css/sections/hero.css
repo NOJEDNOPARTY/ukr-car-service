@@ -190,7 +190,7 @@
                 &:first-child {
                     margin-bottom: -2rem;
                     font-size: .75rem;
-                    opacity: .5;
+                    opacity: .5 !important;
                 }
             }
 
@@ -310,10 +310,11 @@
             .breadcrumbs {
                 a {
                     color: var(--white);
+                    opacity: .7;
 
                     @media (hover: hover) {
                         &:hover {
-                            text-decoration: underline;
+                            opacity: 1;
                         }
                     }
                 }

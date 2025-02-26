@@ -67,8 +67,14 @@
             margin-top: 1.5rem;
 
             a {
-                border: none;
+                border: 1px solid var(--black-bg-darker-10);
                 border-radius: .75rem;
+
+                @media (hover: hover) {
+                    &:hover {
+                        border: 1px solid var(--orange);
+                    }
+                }
             }
         }
     }

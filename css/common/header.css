@@ -343,7 +343,7 @@
     }
 }
 
-body:has(.hero:first-child) .header:not(.fixed) {
+body:has(.hero:first-child) .header:not(.fixed, .open) {
     backdrop-filter: blur(10px);
 
     :is(.link-element, .btn-select-trigger) {

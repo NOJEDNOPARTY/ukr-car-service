@@ -73,7 +73,7 @@
             line-height: 1.5;
         }
 
-        :is(h4, h4 span, li, p) {
+        :is(h4 span, li, p) {
             margin-bottom: 0;
             font-size: .875rem;
             font-weight: 400;
